@@ -18,7 +18,7 @@
 .back-to-top {
     position: fixed;
     display: none;
-    right: 40px;
+    right: 60px;
     bottom: 30px;
     z-index: 99;
 }
@@ -745,7 +745,7 @@ h6,
 
 .wa {
     position: fixed;
-    right: 35px;
+    right: 55px;
     bottom: 90px;
     background-color: #00bb62;
     border-radius: 40px;
