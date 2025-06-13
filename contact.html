@@ -31,6 +31,13 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style type="text/css">
+        #contactForm .help-block ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -183,7 +190,40 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    <div class="contact-form">
+                        <div id="alertMessage"></div>
+                        <form id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" class="form-control py-2" id="name" placeholder="Nombre" required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="email" class="form-control py-2" id="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" class="form-control py-2" id="mobile" placeholder="Teléfono" required="required" data-validation-required-message="Please enter your mobile number" pattern="^(?![-. ])[\d().+\- ]{6,14}\d$" data-validation-pattern-message="Not a valid mobile number" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" class="form-control py-2" id="subject" placeholder="Asunto" required="required" data-validation-required-message="Please enter a subject" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12 control-group">
+                                    <textarea class="form-control" rows="4" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-accent py-3 px-5" type="submit" id="sendMessageButton">
+                                        <span>Enviar Mensaje</span>
+                                        <div class="d-none spinner-border spinner-border-sm text-light ms-3" role="status"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <form>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -214,7 +254,7 @@
                                 <button class="btn btn-primary py-3 px-5" type="submit">Enviar Mensaje</button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
@@ -275,6 +315,10 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Contact Form Javascript -->
+    <script src="mailer/validation.form.js"></script>
+    <script src="mailer/contact.form.js"></script>
 </body>
 
 </html>
